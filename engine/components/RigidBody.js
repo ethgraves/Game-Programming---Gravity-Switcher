@@ -6,6 +6,7 @@ class RigidBody extends Component{
     this.vy = 0
     
   }
+
   update(){
     this.vy += this.gravity * Time.deltaTime
 

@@ -9,7 +9,7 @@ class KeyboardMovement extends Component {
         this.elapsedTime = 0
     }
     update() {
-        if (Input.keysdown.includes("ArrowUp") || Input.keysdown.includes("Space")) {
+        if (Input.keysdown.includes("ArrowUp")) {
             this.transform.y -= this.playerSpeed * Time.deltaTime
         }
         if (Input.keysdown.includes("ArrowDown")) {
