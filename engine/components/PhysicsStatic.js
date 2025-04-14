@@ -1,0 +1,3 @@
+class PhysicsStatic extends Component{
+  
+}
