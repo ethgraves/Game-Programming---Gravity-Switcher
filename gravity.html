@@ -73,6 +73,7 @@
 <!------------------------------------------------->
 
   <!-- Game objects -->
+  <script src="./game_Gravity/gameObjects/FinishGameObject.js"></script>
   <script src="./game_Gravity/gameObjects/PlayerGameObject.js"></script>
   <script src="./game_Gravity/gameObjects/PlatformGameObject.js"></script>
   
@@ -81,6 +82,7 @@
   <!-- Scenes -->
   <script src="./game_Gravity/scenes/Playground.js"></script>
   <script src="./game_Gravity/scenes/Level01.js"></script>
+  <script src="./game_Gravity/scenes/Level02.js"></script>
 
 <!--=============================================-->
   
@@ -91,7 +93,7 @@
     let canvas // A reference to the canvas element
     let ctx   // A reference to the 2d drawing context in the canvas drawing element
 
-    Engine.nextScene = new Playground() //Assign the start scene (game-specific code)
+    Engine.nextScene = new Level01() //Assign the start scene (game-specific code)
     Engine.start() //Setup the state of the game (game code)
 
 

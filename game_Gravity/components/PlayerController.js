@@ -4,9 +4,9 @@ class PlayerController extends Component {
         this.speed = speed
     }
 
-    sceneNumber = 0
 
     start(){
+        this.normalGravity = true
         this.isGrounded = false
         //this.speed = 100
         this.rigidBody = this.parent.findComponent(RigidBody)
@@ -59,6 +59,14 @@ class PlayerController extends Component {
             if (Input.keysDownThisFrame.includes("ArrowUp")){
                 console.log('Check2')
                 this.rigidBody.gravity = -this.rigidBody.gravity
+                if (this.normalGravity){
+                    this.rigidBody.vy = 150
+                    this.normalGravity = false
+                }
+                else{
+                    this.rigidBody.vy = -150
+                    this.normalGravity = true
+                }
             }
         }
     }

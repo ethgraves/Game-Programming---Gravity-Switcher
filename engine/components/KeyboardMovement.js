@@ -15,10 +15,10 @@ class KeyboardMovement extends Component {
         if (Input.keysdown.includes("ArrowDown")) {
             this.transform.y += this.playerSpeed * Time.deltaTime
         }
-        if (Input.keysdown.includes("ArrowLeft")) {
+        if (Input.keysdown.includes("ArrowLeft") || Input.keysdown.includes("A")) {
             this.transform.x -= this.playerSpeed * Time.deltaTime
         }
-        if (Input.keysdown.includes("ArrowRight")) {
+        if (Input.keysdown.includes("Right") || Input.keysdown.includes("D")) {
             this.transform.x += this.playerSpeed * Time.deltaTime
         }
     }

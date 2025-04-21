@@ -1,4 +1,4 @@
-class Level01 extends Scene {
+class Level02 extends Scene {
     start() {
         // Player Aspects
         let playerX = 300
@@ -35,8 +35,6 @@ class Level01 extends Scene {
         // Game Objects
         this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity), playerX, playerY, playerWidth, playerHeight)
         this.addGameObject(new PlatformGameObject("Platform Game Object"), floor_1[0], floor_1[1], floor_1[2], floor_1[3])
-        this.addGameObject(new PlatformGameObject("Platform Game Object"), floor_2[0], floor_2[1], floor_2[2], floor_2[3])
-        this.addGameObject(new FinishGameObject("Finish Game Object"), finish_X, finish_Y, finish_Width, finish_Height)
-        this.addGameObject(new GameObject().addComponent(new MainSceneController(Level01, Level02))) // Current Scene, Next Scene
+        this.addGameObject(new GameObject().addComponent(new MainSceneController(Level02, Level03))) // Current Scene, Next Scene
     }
 }
