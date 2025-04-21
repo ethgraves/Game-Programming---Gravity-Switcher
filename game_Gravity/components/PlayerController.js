@@ -13,11 +13,11 @@ class PlayerController extends Component {
     }
 
     update(){
-        const allScenes = [Playground, Level01]
+        // const allScenes = [Playground, Level01]
         
 
-        // Checks if player falls too far (restarts level)
-        if (this.transform.y > 600) Engine.nextScene = new allScenes[this.sceneNumber]()
+        // // Checks if player falls too far (restarts level)
+        // if (this.transform.y > 600) Engine.nextScene = new allScenes[this.sceneNumber]()
 
         // Resests isGrounded
         this.isGrounded = false

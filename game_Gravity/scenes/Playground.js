@@ -34,6 +34,6 @@ class Playground extends Scene {
         this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity), playerX, playerY, playerWidth, playerHeight)
         this.addGameObject(new PlatformGameObject("Platform Game Object"), wall_1X, wall_1Y, wall_1Width, wall_1Height)
         this.addGameObject(new PlatformGameObject("Platform Game Object"), wall_2X, wall_2Y, wall_2Width, wall_2Height)
-
+        this.addGameObject(new GameObject().addComponent(new MainSceneController(Playground, Level01)))
     }
 }

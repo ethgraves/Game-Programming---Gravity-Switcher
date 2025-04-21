@@ -1,8 +1,10 @@
 class SceneController extends Component {
-    static allScenes = [Playground, Level01]
-    static sceneNumber = 0
+    constructor(nextScene){
+        super()
+        this.nextScene = nextScene
+    }
 
-    static getScene(){
-        return this.allScenes[this.sceneNumber]
+    update(){
+        if (this.transform.y > 600) Engine.nextScene = new this.nextScene
     }
 }
