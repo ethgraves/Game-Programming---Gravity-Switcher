@@ -1,4 +1,4 @@
-class Level02 extends Scene {
+class Level03 extends Scene {
     start() {
         // Player Aspects
         let playerX = 300
@@ -16,11 +16,14 @@ class Level02 extends Scene {
 
 
         // Wall Aspects (left-right, top-bottom)
-        let wall_1 = [737, 250, 20, 500] // Middle Wall
+        let wall_1 = [650, 250, 20, 500] // Left Middle Wall
+        let wall_2 = [825, 450, 20, 500] // Right Middle Wall
 
 
-        // Ceiling Aspects (left-right, top-bottom)
-        let pass3
+        // List with all Platforms (left to right)
+        let all_platforms = [floor_1, wall_1, wall_2]
+
+        // ====================================================================================================
 
 
         // Finish Aspects
@@ -32,9 +35,8 @@ class Level02 extends Scene {
             // Green Finish Line
         let finish_line = [finish_floor[0], (finish_floor[1] + (finish_floor[3] / 2) + 5), finish_floor[2] + 1, 10]
 
-        
-        // List with all Platforms (left to right)
-        let all_platforms = [floor_1, wall_1]
+        // ====================================================================================================
+
 
 
         // Game Objects
@@ -43,6 +45,7 @@ class Level02 extends Scene {
         this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity), playerX, playerY, playerWidth, playerHeight)
         this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[0][0], all_platforms[0][1], all_platforms[0][2], all_platforms[0][3])
         this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[1][0], all_platforms[1][1], all_platforms[1][2], all_platforms[1][3])
+        this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[2][0], all_platforms[2][1], all_platforms[2][2], all_platforms[2][3])
 
             // Finish Structure Game Objects
         this.addGameObject(new PlatformGameObject("Platform Game Object"), finish_floor[0], finish_floor[1], finish_floor[2], finish_floor[3])
@@ -51,6 +54,6 @@ class Level02 extends Scene {
         this.addGameObject(new FinishGameObject("Finish Game Object"), finish_line[0], finish_line[1], finish_line[2], finish_line[3])
 
             // Controller(s)
-        this.addGameObject(new GameObject().addComponent(new MainSceneController(Level02, Level03))) // Current Scene, Next Scene
+        this.addGameObject(new GameObject().addComponent(new MainSceneController(Level03, Level04))) // Current Scene, Next Scene
     }
 }

@@ -83,6 +83,12 @@
   <script src="./game_Gravity/scenes/Playground.js"></script>
   <script src="./game_Gravity/scenes/Level01.js"></script>
   <script src="./game_Gravity/scenes/Level02.js"></script>
+  <script src="./game_Gravity/scenes/Level03.js"></script>
+
+<!------------------------------------------------->  
+
+  <!-- Testing/Debugging -->
+  <script src="./game_Gravity/zDebugging/GridLines.js"></script>
 
 <!--=============================================-->
   
@@ -93,7 +99,9 @@
     let canvas // A reference to the canvas element
     let ctx   // A reference to the 2d drawing context in the canvas drawing element
 
-    Engine.nextScene = new Playground() //Assign the start scene (game-specific code)
+    Globals.gridLinesTest = true
+
+    Engine.nextScene = new Level01() //Assign the start scene (game-specific code)
     Engine.start() //Setup the state of the game (game code)
 
 

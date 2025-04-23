@@ -1,20 +1,20 @@
 class PlayerController extends Component {
-    constructor(speed){
+    constructor(speed) {
         super()
         this.speed = speed
     }
 
 
-    start(){
+    start() {
         this.normalGravity = true
         this.isGrounded = false
         //this.speed = 100
         this.rigidBody = this.parent.findComponent(RigidBody)
     }
 
-    update(){
+    update() {
         // const allScenes = [Playground, Level01]
-        
+
 
         // // Checks if player falls too far (restarts level)
         // if (this.transform.y > 600) Engine.nextScene = new allScenes[this.sceneNumber]()
@@ -32,39 +32,58 @@ class PlayerController extends Component {
         let [pl, pr, pt, pb] = Collisions.getEdgesOfRectangle(this.parent)
 
 
-        if (this.rigidBody.lastCollisionY){
+        if (this.rigidBody.lastCollisionY) {
             let [cl, cr, ct, cb] = Collisions.getEdgesOfRectangle(this.rigidBody.lastCollisionY)
 
             if (pb <= ct) {
                 this.isGrounded = true
+                this.normalGravity = true
                 this.transform.y -= 0.0001
                 this.rigidBody.vy = 0
             }
 
-            else{
+            else if (pt >= cb) {
+                this.isGrounded = true
+                this.normalGravity = false
+                this.transform.y += 0.0001
+                this.rigidBody.vy = 0
+            }
+
+            else if (pb > ct) {
                 this.rigidBody.vy = 10
+            }
+
+            else if (pt < cb) {
+                this.rigidBody.vy = -10
             }
         }
 
 
-        if (this.isGrounded){
-            if (Input.keysDownThisFrame.includes("ArrowUp")){
-                this.isGrounded = false
-                this.rigidBody.vy = -200
-                console.log('Check1')
+        if (this.isGrounded) {
+            if (Input.keysDownThisFrame.includes("ArrowUp")) {
+                if (this.normalGravity) {
+                    this.isGrounded = false
+                    this.rigidBody.vy = -200
+                    console.log('Check1')
+                }
+                else{
+                    this.isGrounded = false
+                    this.rigidBody.vy = +200
+                    console.log('Check1')
+                }
             }
         }
 
         else {
-            if (Input.keysDownThisFrame.includes("ArrowUp")){
+            if (Input.keysDownThisFrame.includes("ArrowUp")) {
                 console.log('Check2')
                 this.rigidBody.gravity = -this.rigidBody.gravity
-                if (this.normalGravity && (this.rigidBody.vy >= 150)){
+                if (this.normalGravity && (this.rigidBody.vy >= 150)) {
                     this.rigidBody.vy = 150
                     this.normalGravity = false
                 }
 
-                else if (this.normalGravity && (0 <= this.rigidBody.vy < 150)){
+                else if (this.normalGravity && (0 <= this.rigidBody.vy < 150)) {
                     this.normalGravity = false
                 }
 
@@ -73,7 +92,7 @@ class PlayerController extends Component {
                     this.normalGravity = true
                 }
 
-                else if (!this.normalGravity && (-150 < this.rigidBody.vy <= 0)){
+                else if (!this.normalGravity && (-150 < this.rigidBody.vy <= 0)) {
                     this.normalGravity = true
                 }
             }

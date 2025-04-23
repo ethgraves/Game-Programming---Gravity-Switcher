@@ -12,7 +12,7 @@ class Level01 extends Scene {
         // let var = [x, y, width, height]
 
         // Floor Aspects (left-right, top-bottom)
-        let floor_1 = [375, 520, 200, 450]
+        let floor_1 = [375, 520, 200, 450] // Starting Platform
 
 
         // Wall Aspects (left-right, top-bottom)
