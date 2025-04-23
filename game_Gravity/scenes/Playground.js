@@ -22,6 +22,12 @@ class Playground extends Scene {
         let wall_2Width = 100
         let wall_2Height = 10
 
+        // Wall 3
+        let wall_3X = 300
+        let wall_3Y = 100
+        let wall_3Width = 100
+        let wall_3Height = 10
+
 
         // Wall Aspects (left-right, top-bottom)
         let pass2
@@ -42,6 +48,7 @@ class Playground extends Scene {
         this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity), playerX, playerY, playerWidth, playerHeight)
         this.addGameObject(new PlatformGameObject("Platform Game Object"), wall_1X, wall_1Y, wall_1Width, wall_1Height)
         this.addGameObject(new PlatformGameObject("Platform Game Object"), wall_2X, wall_2Y, wall_2Width, wall_2Height)
+        this.addGameObject(new PlatformGameObject("Platform Game Object"), wall_3X, wall_3Y, wall_3Width, wall_3Height)
         this.addGameObject(new FinishGameObject("Finish Game Object"), fin_X, fin_Y, fin_Width, fin_Height)
         this.addGameObject(new GameObject().addComponent(new MainSceneController(Playground, Level01)))
     }
