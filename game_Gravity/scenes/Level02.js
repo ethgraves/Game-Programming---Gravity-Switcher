@@ -21,7 +21,7 @@ class Level02 extends Scene {
 // -------------------------------------------------------------
 // --- CEILINGS ---
         // Ceiling Aspects (left-right, top-bottom)
-        let pass3
+        let pass2
 
 // -------------------------------------------------------------
 // --- WALLS ---
