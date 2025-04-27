@@ -45,6 +45,7 @@
     <!-- Shapes -->
   <script src="./engine/components/Rectangle.js"></script>
   <script src="./engine/components/Circle.js"></script>
+  <!-- <script src="./engine/components/Triangle.js"></script> -->
   <script src="./engine/components/Line.js"></script>
   <script src="./engine/components/Line2.js"></script>
   <script src="./engine/components/Vector2.js"></script>
@@ -66,10 +67,10 @@
 <!------------------------------------------------->
 
   <!-- Components -->
-  <!-- <script src="./game_Gravity/components/SceneController.js"></script> -->
-  <script src="./game_Gravity/components/MainSceneController.js"></script>
+  <script src="./game_Gravity/components/SceneController.js"></script>
   <script src="./game_Gravity/components/PlayerController.js"></script>
   <script src="./game_Gravity/components/PlatformAdjust.js"></script>
+  <script src="./game_Gravity/components/SpikeSpawner.js"></script>
    
 <!------------------------------------------------->
 
@@ -77,6 +78,9 @@
   <script src="./game_Gravity/gameObjects/FinishGameObject.js"></script>
   <script src="./game_Gravity/gameObjects/PlayerGameObject.js"></script>
   <script src="./game_Gravity/gameObjects/PlatformGameObject.js"></script>
+  <!-- <script src="./game_Gravity/gameObjects/TriSpikeGameObject.js"></script> -->
+  <script src="./game_Gravity/gameObjects/SpikeGameObject.js"></script>
+  <script src="./game_Gravity/gameObjects/SawGameObject.js"></script>
   
 <!------------------------------------------------->  
 
@@ -102,7 +106,7 @@
 
     Globals.gridLinesTest = true
 
-    Engine.nextScene = new Level03() //Assign the start scene (game-specific code)
+    Engine.nextScene = new Playground() //Assign the start scene (game-specific code)
     Engine.start() //Setup the state of the game (game code)
 
 

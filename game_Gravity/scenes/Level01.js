@@ -70,6 +70,6 @@ class Level01 extends Scene {
 
 // -------------------------------------------------------------
 // --- CONTROLLERS ---
-        this.addGameObject(new GameObject().addComponent(new MainSceneController(Level01, Level02))) // Current Scene, Next Scene
+        this.addGameObject(new GameObject().addComponent(new SceneController(Level01, Level02))) // Current Scene, Next Scene
     }
 }

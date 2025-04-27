@@ -74,6 +74,6 @@ for (let i = 0; i < all_platforms.length; i++){
 
 // -------------------------------------------------------------
 // --- CONTROLLERS ---
-        this.addGameObject(new GameObject().addComponent(new MainSceneController(Level03, Level04))) // Current Scene, Next Scene
+        this.addGameObject(new GameObject().addComponent(new SceneController(Level03, Level04))) // Current Scene, Next Scene
     }
 }
