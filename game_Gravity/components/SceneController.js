@@ -9,6 +9,7 @@ class SceneController extends Component {
 
         let playerGameObject = Engine.currentScene.findGameObject("Player Game Object")
         let finishGameObject = Engine.currentScene.findGameObject("Finish Game Object")
+        let spikeGameObjects = Engine.currentScene.findGameObjects("Spike Game Object")
         
 
         // Checks if player falls too far (restarts level)
@@ -23,5 +24,15 @@ class SceneController extends Component {
             console.log('Win')
             Engine.nextScene = new this.nextScene()
         }
+
+        // if (Collisions.inCollision(playerGameObject, spikeGameObject)){
+        //     Engine.nextScene = new this.currentScene()
+        // }
+
+        // for (let spikeGameObject in spikeGameObjects){
+        //     if (Collisions.inCollision(playerGameObject, spikeGameObject)){
+        //         Engine.nextScene = new this.nextScene()
+        //     }
+        // }
     } 
 }
