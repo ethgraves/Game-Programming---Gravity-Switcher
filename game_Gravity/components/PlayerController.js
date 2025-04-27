@@ -6,18 +6,14 @@ class PlayerController extends Component {
 
 
     start() {
-        this.normalGravity = true
-        this.isGrounded = false
+        this.normalGravity = this.parent.findComponent(PlayerGlobals).normalGravity
+        this.isGrounded = this.parent.findComponent(PlayerGlobals).isGrounded
         //this.speed = 100
-        this.rigidBody = this.parent.findComponent(RigidBody)
+        this.rigidBody = this.parent.findComponent(PlayerGlobals).rigidBody
     }
 
     update() {
         // const allScenes = [Playground, Level01]
-
-
-        // // Checks if player falls too far (restarts level)
-        // if (this.transform.y > 600) Engine.nextScene = new allScenes[this.sceneNumber]()
 
         // Resests isGrounded
         this.isGrounded = false
