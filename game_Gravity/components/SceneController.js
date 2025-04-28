@@ -14,7 +14,7 @@ class SceneController extends Component {
 
         // Checks if player falls too far (restarts level)
         // if (this.transform.y > 600) Engine.nextScene = Engine.currentScene
-        if (playerGameObject.transform.y > 600 || playerGameObject.transform.y < 50){
+        if (playerGameObject.transform.y > window.innerHeight + 30 || playerGameObject.transform.y < -30){
             console.log('Fall')
             Engine.nextScene = new this.currentScene()
         }
@@ -29,10 +29,10 @@ class SceneController extends Component {
         //     Engine.nextScene = new this.currentScene()
         // }
 
-        // for (let spikeGameObject in spikeGameObjects){
-        //     if (Collisions.inCollision(playerGameObject, spikeGameObject)){
-        //         Engine.nextScene = new this.nextScene()
-        //     }
-        // }
+        for (let spikeGameObject of spikeGameObjects){
+            if (Collisions.inCollision(playerGameObject, spikeGameObject)){
+                Engine.nextScene = new this.currentScene()
+            }
+        }
     } 
 }
