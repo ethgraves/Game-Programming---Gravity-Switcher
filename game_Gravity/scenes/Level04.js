@@ -21,16 +21,17 @@ class Level04 extends Scene {
 // -------------------------------------------------------------
 // --- CEILINGS ([x, y, w, h]) ---
         let ceiling_1 = [650, 500, 20, 600] // Left Middle Wall
+        // 500
 
 // -------------------------------------------------------------
 // --- SINGLE SPIKES ([x, y, w, h]) ---
-        let spike_1 = [(ceiling_1[0]), (ceiling_1[1] + 11), 10, 20] // Attached to bottom of ceiling_1
-        let spike_2 = [(floor_2[0]), (floor_2[1] - 11), 10, 20] // Attached to top of floor_2
+        let spike_1 = [ceiling_1[0], ceiling_1[1] + 11, 10, 20] // Attached to bottom of ceiling_1
+        let spike_2 = [floor_2[0], floor_2[1] - 11, 10, 20] // Attached to top of floor_2
 
 // -------------------------------------------------------------
-// --- SPIKE SPAWNERS ([horizontal, amount, x, y, w, h]) ---
-        let spikeSpawner_1 = [false, 19, 671, 200, 10, 20]
-        let spikeSpawner_2 = [false, 19, 804, 200, 10, 20]
+// --- SPIKE SPAWNERS ([x, y, w, h, horizontal, amount]) ---
+        let spikeSpawner_1 = [671, 200, 10, 20, false, 16]
+        let spikeSpawner_2 = [804, 200, 10, 20, false, 16]
 
 // -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---
@@ -39,6 +40,13 @@ class Level04 extends Scene {
 
         floorPlatforms = PlatformAdjust.platformAdjustFloor(floorPlatforms)
         ceilingPlatforms = PlatformAdjust.platformAdjustCeiling(ceilingPlatforms)
+
+// -------------------------------------------------------------
+// --- PLATFORM ATTACHMENTS ---
+        // spike_1 = Attach.attach(spike_1, ceiling_1, "bottom")
+        // spike_2 = Attach.attach(spike_2, floor_2, "bottom")
+        // spikeSpawner_1 = Attach.attach(spikeSpawner_1, ceiling_1, "right")
+        // spikeSpawner_2 = Attach.attach(spikeSpawner_2, floor_2, "left")
 
 // -------------------------------------------------------------
 // --- ALL OBJECTS ---
@@ -82,8 +90,8 @@ class Level04 extends Scene {
 
 // -------------------------------------------------------------
 // --- SPIKE SPAWNER GAME OBJECTS ---
-for (let i = 0; i < allSpikeSpawners.length; i++){
-        this.addGameObject(new Spawner("Spawner", allSpikeSpawners[i][0], allSpikeSpawners[i][1]), allSpikeSpawners[i][2], allSpikeSpawners[i][3], allSpikeSpawners[i][4], allSpikeSpawners[i][5])
+        for (let i = 0; i < allSpikeSpawners.length; i++){
+                this.addGameObject(new Spawner("Spawner", allSpikeSpawners[i][4], allSpikeSpawners[i][5]), allSpikeSpawners[i][0], allSpikeSpawners[i][1], allSpikeSpawners[i][2], allSpikeSpawners[i][3])
 }
 
 // -------------------------------------------------------------

@@ -8,13 +8,13 @@ class SpikeSpawner extends Component {
     start() {
         if (this.horizontal) {
             for (let i = 1; i <= this.numberOfSpikes; i++) {
-                Engine.currentScene.addGameObject(new SpikeGameObject("Spike Game Object"), (this.transform.x + (i * (this.transform.w + 5))), this.transform.y, this.transform.w, this.transform.h)
+                Engine.currentScene.addGameObject(new SpikeGameObject("Spike Game Object"), (this.transform.x + (i * (this.transform.w * 2))), this.transform.y, this.transform.w, this.transform.h)
             }
         }
 
         else {
             for (let i = 1; i <= this.numberOfSpikes; i++) {
-                Engine.currentScene.addGameObject(new SpikeGameObject("Spike Game Object"), this.transform.x, (this.transform.y + (i * (this.transform.w + 5))), this.transform.h, this.transform.w)
+                Engine.currentScene.addGameObject(new SpikeGameObject("Spike Game Object"), this.transform.x, (this.transform.y + (i * (this.transform.w * 2))), this.transform.h, this.transform.w)
             }
         }
     }

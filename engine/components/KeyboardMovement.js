@@ -5,9 +5,11 @@ class KeyboardMovement extends Component {
         super()
         this.playerSpeed = playerSpeed
     }
+    
     start() {
         this.elapsedTime = 0
     }
+
     update() {
         if (Input.keysdown.includes("ArrowUp")) {
             this.transform.y -= this.playerSpeed * Time.deltaTime
