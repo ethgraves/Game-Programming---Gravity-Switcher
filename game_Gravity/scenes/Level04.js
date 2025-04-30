@@ -1,8 +1,8 @@
-class Level02 extends Scene {
+class Level04 extends Scene {
     start() {
 // ===============================================================================================================
 // --- PLAYER ---
-// ==============        
+// ==============
         let playerX = 300
         let playerY = 285
         let playerWidth = 15
@@ -12,25 +12,39 @@ class Level02 extends Scene {
 
 
 // ===============================================================================================================
-// --- PLATFORMS ([x, y, w, h]) ---
+// --- PLATFORMS ---
 // ================================
-// --- FLOORS ---
-        // Floor Aspects (left-right, top-bottom)
+// --- FLOORS ([x, y, w, h]) ---
         let floor_1 = [375, 300, 200, 450] // Starting Platform
-        let floor_2 = [737, 250, 20, 500] // Middle Wall
+        let floor_2 = [825, 200, 20, 500] // Right Middle Wall
 
 // -------------------------------------------------------------
-// --- CEILINGS ---
-        // Ceiling Aspects (left-right, top-bottom)
-        let pass2
+// --- CEILINGS ([x, y, w, h]) ---
+        let ceiling_1 = [650, 500, 20, 600] // Left Middle Wall
+
+// -------------------------------------------------------------
+// --- SINGLE SPIKES ([x, y, w, h]) ---
+        let spike_1 = [(ceiling_1[0]), (ceiling_1[1] + 11), 10, 20] // Attached to bottom of ceiling_1
+        let spike_2 = [(floor_2[0]), (floor_2[1] - 11), 10, 20] // Attached to top of floor_2
+
+// -------------------------------------------------------------
+// --- SPIKE SPAWNERS ([horizontal, amount, x, y, w, h]) ---
+        let spikeSpawner_1 = [false, 19, 671, 200, 10, 20]
+        let spikeSpawner_2 = [false, 19, 804, 200, 10, 20]
 
 // -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---
         let floorPlatforms = [floor_1, floor_2]
+        let ceilingPlatforms = [ceiling_1]
 
         floorPlatforms = PlatformAdjust.platformAdjustFloor(floorPlatforms)
+        ceilingPlatforms = PlatformAdjust.platformAdjustCeiling(ceilingPlatforms)
 
-        let all_platforms = [floorPlatforms]
+// -------------------------------------------------------------
+// --- ALL OBJECTS ---
+        let all_platforms = [floorPlatforms, ceilingPlatforms]
+        let allSpikes = [spike_1, spike_2]
+        let allSpikeSpawners = [spikeSpawner_1, spikeSpawner_2]
 
 
 // ===============================================================================================================
@@ -45,7 +59,6 @@ class Level02 extends Scene {
         let finish_line = [finish_floor[0], (finish_floor[1] + (finish_floor[3] / 2) + 5), finish_floor[2] + 1, 10]
 
 
-
 // ===============================================================================================================
 // --- FOR LEVEL ---
 // ====================
@@ -56,12 +69,22 @@ class Level02 extends Scene {
 // -------------------------------------------------------------
 // --- PLATFORM GAME OBJECTS ---
         for (let i = 0; i < all_platforms.length; i++){
-            for (let j = 0; j < all_platforms[i].length; j++){
-                this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[i][j][0], all_platforms[i][j][1], all_platforms[i][j][2], all_platforms[i][j][3])
-            }
+                for (let j = 0; j < all_platforms[i].length; j++){
+                        this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[i][j][0], all_platforms[i][j][1], all_platforms[i][j][2], all_platforms[i][j][3])
+                }
         }
-        // this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[0][0], all_platforms[0][1], all_platforms[0][2], all_platforms[0][3])
-        // this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[1][0], all_platforms[1][1], all_platforms[1][2], all_platforms[1][3])
+
+// -------------------------------------------------------------
+// --- SPIKE GAME OBJECTS ---
+        for (let i = 0; i < allSpikes.length; i++){
+                this.addGameObject(new SpikeGameObject("Spike Game Object"), allSpikes[i][0], allSpikes[i][1], allSpikes[i][2], allSpikes[i][3])
+        }
+
+// -------------------------------------------------------------
+// --- SPIKE SPAWNER GAME OBJECTS ---
+for (let i = 0; i < allSpikeSpawners.length; i++){
+        this.addGameObject(new Spawner("Spawner", allSpikeSpawners[i][0], allSpikeSpawners[i][1]), allSpikeSpawners[i][2], allSpikeSpawners[i][3], allSpikeSpawners[i][4], allSpikeSpawners[i][5])
+}
 
 // -------------------------------------------------------------
 // --- FINISH STRUCTURE ---
@@ -72,6 +95,6 @@ class Level02 extends Scene {
 
 // -------------------------------------------------------------
 // --- CONTROLLERS ---
-        this.addGameObject(new GameObject().addComponent(new SceneController(Level02, Level03))) // Current Scene, Next Scene
+        this.addGameObject(new GameObject().addComponent(new SceneController(Level04, Level03))) // Current Scene, Next Scene
     }
 }

@@ -17,25 +17,21 @@ class Level03 extends Scene {
 // --- FLOORS ---
         // Floor Aspects (left-right, top-bottom)
         let floor_1 = [375, 300, 200, 450] // Starting Platform
+        let floor_2 = [825, 200, 20, 500] // Right Middle Wall
 
 // -------------------------------------------------------------
 // --- CEILINGS ---
-        let pass2
-
-// -------------------------------------------------------------
-// --- WALLS ---
-        // Wall Aspects (left-right, top-bottom)
-        let wall_1 = [650, 250, 20, 500] // Left Middle Wall
-        let wall_2 = [825, 450, 20, 500] // Right Middle Wall
-
+        let ceiling_1 = [650, 500, 20, 600] // Left Middle Wall
+        
 // -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---
-        let floorPlatforms = [floor_1]
-        let wallPlatforms = [wall_1, wall_2]
+        let floorPlatforms = [floor_1, floor_2]
+        let ceilingPlatforms = [ceiling_1]
 
         floorPlatforms = PlatformAdjust.platformAdjustFloor(floorPlatforms)
+        ceilingPlatforms = PlatformAdjust.platformAdjustCeiling(ceilingPlatforms)
 
-        let all_platforms = [floorPlatforms, wallPlatforms]
+        let all_platforms = [floorPlatforms, ceilingPlatforms]
 
 
 // ===============================================================================================================
