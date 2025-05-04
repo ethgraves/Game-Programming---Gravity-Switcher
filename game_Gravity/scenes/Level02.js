@@ -28,7 +28,7 @@ class Level02 extends Scene {
 // --- PLATFORM ADJUSTMENTS ---
         let floorPlatforms = [floor_1, floor_2]
 
-        floorPlatforms = PlatformAdjust.platformAdjustFloor(floorPlatforms)
+        floorPlatforms = PlatformAdjust.adjustVerticalTop(floorPlatforms)
 
         let all_platforms = [floorPlatforms]
 

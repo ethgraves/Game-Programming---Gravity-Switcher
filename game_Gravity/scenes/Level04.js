@@ -20,7 +20,7 @@ class Level04 extends Scene {
 
 // -------------------------------------------------------------
 // --- CEILINGS ([x, y, w, h]) ---
-        let ceiling_1 = [650, 500, 20, 600] // Left Middle Wall
+        let ceiling_1 = [650, 800, 20, 600] // Left Middle Wall
         // 500
 
 // -------------------------------------------------------------
@@ -30,23 +30,23 @@ class Level04 extends Scene {
 
 // -------------------------------------------------------------
 // --- SPIKE SPAWNERS ([x, y, w, h, horizontal, amount]) ---
-        let spikeSpawner_1 = [671, 200, 10, 20, false, 16]
+        let spikeSpawner_1 = [671, 165, 10, 20, false, 16]
         let spikeSpawner_2 = [804, 200, 10, 20, false, 16]
+
+// -------------------------------------------------------------
+// --- PLATFORM ATTACHMENTS ---
+        // spike_1 = Attach.attach(spike_1, ceiling_1, "top")
+        // spike_2 = Attach.attach(spike_2, floor_2, "top")
+        // spikeSpawner_1 = Attach.attach(spikeSpawner_1, ceiling_1, "right")
+        // spikeSpawner_2 = Attach.attach(spikeSpawner_2, floor_2, "left")
 
 // -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---
         let floorPlatforms = [floor_1, floor_2]
         let ceilingPlatforms = [ceiling_1]
 
-        floorPlatforms = PlatformAdjust.platformAdjustFloor(floorPlatforms)
-        ceilingPlatforms = PlatformAdjust.platformAdjustCeiling(ceilingPlatforms)
-
-// -------------------------------------------------------------
-// --- PLATFORM ATTACHMENTS ---
-        // spike_1 = Attach.attach(spike_1, ceiling_1, "bottom")
-        // spike_2 = Attach.attach(spike_2, floor_2, "bottom")
-        // spikeSpawner_1 = Attach.attach(spikeSpawner_1, ceiling_1, "right")
-        // spikeSpawner_2 = Attach.attach(spikeSpawner_2, floor_2, "left")
+        floorPlatforms = PlatformAdjust.adjustVerticalTop(floorPlatforms)
+        ceilingPlatforms = PlatformAdjust.adjustVerticalBottom(ceilingPlatforms)
 
 // -------------------------------------------------------------
 // --- ALL OBJECTS ---
@@ -103,6 +103,6 @@ class Level04 extends Scene {
 
 // -------------------------------------------------------------
 // --- CONTROLLERS ---
-        this.addGameObject(new GameObject().addComponent(new SceneController(Level04, Level03))) // Current Scene, Next Scene
+        this.addGameObject(new GameObject().addComponent(new SceneController(Level04, Level05))) // Current Scene, Next Scene
     }
 }

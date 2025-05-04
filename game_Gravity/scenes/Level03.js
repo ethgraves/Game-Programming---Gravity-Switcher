@@ -28,8 +28,8 @@ class Level03 extends Scene {
         let floorPlatforms = [floor_1, floor_2]
         let ceilingPlatforms = [ceiling_1]
 
-        floorPlatforms = PlatformAdjust.platformAdjustFloor(floorPlatforms)
-        ceilingPlatforms = PlatformAdjust.platformAdjustCeiling(ceilingPlatforms)
+        floorPlatforms = PlatformAdjust.adjustVerticalTop(floorPlatforms)
+        ceilingPlatforms = PlatformAdjust.adjustVerticalBottom(ceilingPlatforms)
 
         let all_platforms = [floorPlatforms, ceilingPlatforms]
 

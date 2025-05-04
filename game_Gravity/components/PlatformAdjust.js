@@ -1,16 +1,32 @@
 class PlatformAdjust extends Component{
-    static platformAdjustFloor(floorPlatforms){
-        for (let platform of floorPlatforms)
+    static adjustVerticalTop(platforms){
+        for (let platform of platforms)
             platform[1] += platform[3] / 2
 
-        return floorPlatforms
+        return platforms
     }
 
-    static platformAdjustCeiling(ceilingPlatforms){
-        for (let platform of ceilingPlatforms){
+    static adjustVerticalBottom(platforms){
+        for (let platform of platforms)
             platform[1] -= platform[3] / 2
 
-        return ceilingPlatforms
-        }
+        return platforms
     }
+
+    static adjustHorizontalLeft(platforms){
+        for (let platform of platforms)
+            platform[0] += platform[2] / 2
+
+        return platforms
+    }
+
+    static adjustHorizontalRight(platforms){
+        for (let platform of platforms)
+            platform[0] -= platform[2] / 2
+
+        return platforms
+    }
+    
 }
+
+// adjustHorizontalTop

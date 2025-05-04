@@ -7,15 +7,17 @@ class Attach {
             objectAttaching[0] = objectAttachingTo[0]
 
             // y Axis
-            objectAttaching[1] = (objectAttachingTo[1] / 2) + (objectAttachingTo[1])
+            //objectAttaching[1] = (objectAttachingTo[1] / 2) + (objectAttachingTo[1])
+            //objectAttaching[1] = objectAttachingTo[1] + objectAttaching[3] + 1
             // objectAttaching[1] = objectAttachingTo[1] - (objectAttaching[2] + 1)
+            objectAttaching[1] = objectAttachingTo[1] - objectAttachingTo[3] - objectAttaching[3] / 2
         
             return objectAttaching
         }
         
         else if (side == "bottom") {
             objectAttaching[0] = objectAttachingTo[0]
-            objectAttaching[1] = objectAttachingTo[1] + (objectAttaching[2] + 1)
+            objectAttaching[1] = objectAttachingTo[1] + (objectAttaching[3] / 2 + 1)
         
             return objectAttaching
         }
