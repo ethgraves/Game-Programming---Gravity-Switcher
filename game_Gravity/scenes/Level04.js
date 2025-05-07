@@ -75,14 +75,6 @@ class Level04 extends Scene {
         this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity), playerX, playerY, playerWidth, playerHeight)
 
 // -------------------------------------------------------------
-// --- PLATFORM GAME OBJECTS ---
-        for (let i = 0; i < all_platforms.length; i++){
-                for (let j = 0; j < all_platforms[i].length; j++){
-                        this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[i][j][0], all_platforms[i][j][1], all_platforms[i][j][2], all_platforms[i][j][3])
-                }
-        }
-
-// -------------------------------------------------------------
 // --- SPIKE GAME OBJECTS ---
         for (let i = 0; i < allSpikes.length; i++){
                 this.addGameObject(new SpikeGameObject("Spike Game Object"), allSpikes[i][0], allSpikes[i][1], allSpikes[i][2], allSpikes[i][3])
@@ -92,6 +84,14 @@ class Level04 extends Scene {
 // --- SPIKE SPAWNER GAME OBJECTS ---
         for (let i = 0; i < allSpikeSpawners.length; i++){
                 this.addGameObject(new Spawner("Spawner", allSpikeSpawners[i][4], allSpikeSpawners[i][5]), allSpikeSpawners[i][0], allSpikeSpawners[i][1], allSpikeSpawners[i][2], allSpikeSpawners[i][3])
+}
+
+// -------------------------------------------------------------
+// --- PLATFORM GAME OBJECTS ---
+for (let i = 0; i < all_platforms.length; i++){
+        for (let j = 0; j < all_platforms[i].length; j++){
+                this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[i][j][0], all_platforms[i][j][1], all_platforms[i][j][2], all_platforms[i][j][3])
+        }
 }
 
 // -------------------------------------------------------------

@@ -40,8 +40,32 @@ class Level05 extends Scene {
 
 // -------------------------------------------------------------
 // --- SINGLE SPIKES ([x, y, w, h]) ---
-        let spike_1 = [350, 520, 200, 20]
-        let spike_2
+        // Adjust Vertical Top                  From top-left to bottom-right:
+        let AVT_s_1 = [795, 295, 10, 215]       // (B-4)
+        let AVT_s_2 = [935, 160, 10, 200]               // (T-4)
+
+
+        // Adjust Vertical Bottom
+        let AVB_s_1 = [525, 505, 10, 220]       // (B-2)
+        let AVB_s_2 = [1305, 505, 10, 145]      // (B-6)
+        let AVB_s_3 = [365, 380, 10, 220]               // (T-2)
+
+
+        
+        // Adjust Horizontal Left
+        let AHL_s_1 = [350, 505, 180, 10]       // (B-1)
+        let AHL_s_2 = [525, 290, 275, 10]       // (B-3)
+        let AHL_s_3 = [795, 505, 515, 10]       // (B-5)
+        let AHL_s_4 = [170, 380, 200, 10]               // (T-1)
+        let AHL_s_5 = [360, 165, 579, 10]               // (T-3)
+        let AHL_s_6 = [935, 355, 165, 10]               // (T-5)
+
+
+
+        // Adjust Horizontal Right
+
+
+
 
 // -------------------------------------------------------------
 // --- SPIKE SPAWNERS ([x, y, w, h, horizontal, amount]) ---
@@ -54,9 +78,9 @@ class Level05 extends Scene {
         let adjustVerticalBottomPlatforms = [AVB_p_1, AVB_p_2, AVB_p_3, AVB_p_4]
         let adjustHorizontalLeftPlatforms = [AHL_p_1, AHL_p_2, AHL_p_3, AHL_p_4, AHL_p_5, AHL_p_6, AHL_p_7]
 
-        let adjustVerticalTopSpikes = []
-        let adjustVerticalBottomSpikes = []
-        let adjustHorizontalLeftSpikes = [spike_1]
+        let adjustVerticalTopSpikes = [AVT_s_1, AVT_s_2]
+        let adjustVerticalBottomSpikes = [AVB_s_1, AVB_s_2, AVB_s_3]
+        let adjustHorizontalLeftSpikes = [AHL_s_1, AHL_s_2, AHL_s_3, AHL_s_4, AHL_s_5, AHL_s_6]
 
         adjustVerticalTopPlatforms = PlatformAdjust.adjustVerticalTop(adjustVerticalTopPlatforms)
         adjustVerticalBottomPlatforms = PlatformAdjust.adjustVerticalBottom(adjustVerticalBottomPlatforms)
@@ -96,32 +120,32 @@ class Level05 extends Scene {
         this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity), playerX, playerY, playerWidth, playerHeight)
 
 // -------------------------------------------------------------
-// --- PLATFORM GAME OBJECTS ---
-        
-        for (let i = 0; i < all_platforms.length; i++){
-                for (let j = 0; j < all_platforms[i].length; j++)
-                        this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[i][j][0], all_platforms[i][j][1], all_platforms[i][j][2], all_platforms[i][j][3])
-        }
-
-// -------------------------------------------------------------
 // --- SPIKE GAME OBJECTS ---
         try{
                 for (let i = 0; i < allSpikes.length; i++)
                         this.addGameObject(new SpikeGameObject("Spike Game Object"), allSpikes[i][0], allSpikes[i][1], allSpikes[i][2], allSpikes[i][3])
-        } catch(error){}
+        } catch(error){console.log("Error in SPIKE GAME OBJECTS 1")}
 
         try{
                 for (let i = 0; i < allAdjustedSpikes.length; i++)
                         for (let j = 0; j < allAdjustedSpikes[i].length; j++)
                                 this.addGameObject(new SpikeGameObject("Spike Game Object"), allAdjustedSpikes[i][j][0], allAdjustedSpikes[i][j][1], allAdjustedSpikes[i][j][2], allAdjustedSpikes[i][j][3])
-        } catch(error){}
+        } catch(error){console.log("Error in SPIKE GAME OBJECTS 2")}
 
 // -------------------------------------------------------------
 // --- SPIKE SPAWNER GAME OBJECTS ---
         try{
                 for (let i = 0; i < allSpikeSpawners.length; i++)
                         this.addGameObject(new Spawner("Spawner", allSpikeSpawners[i][4], allSpikeSpawners[i][5]), allSpikeSpawners[i][0], allSpikeSpawners[i][1], allSpikeSpawners[i][2], allSpikeSpawners[i][3])
-        } catch(error){}
+        } catch(error){console.log("Error in SPIKE SPAWNER GAME OBJECTS")}
+
+// -------------------------------------------------------------
+// --- PLATFORM GAME OBJECTS ---
+        
+        for (let i = 0; i < all_platforms.length; i++){
+                for (let j = 0; j < all_platforms[i].length; j++)
+                        this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[i][j][0], all_platforms[i][j][1], all_platforms[i][j][2], all_platforms[i][j][3])
+        }
 
 // -------------------------------------------------------------
 // --- FINISH STRUCTURE ---
