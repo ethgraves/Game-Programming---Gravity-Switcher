@@ -39,6 +39,6 @@ class PlayerGlobals extends Component {
             this.rigidBody = value
 
         
-        console.log("normalGravity = " + this.normalGravity + ", isGrounded = " + this.isGrounded)
+        //console.log("normalGravity = " + this.normalGravity + ", isGrounded = " + this.isGrounded)
     }
 }

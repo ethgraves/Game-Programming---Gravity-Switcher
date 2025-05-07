@@ -31,6 +31,8 @@ class SceneController extends Component {
 
         for (let spikeGameObject of spikeGameObjects){
             if (Collisions.inCollision(playerGameObject, spikeGameObject)){
+                //console.log("bbbbbb")
+                PlayerGlobals.set("isGrounded", true)
                 Engine.nextScene = new this.currentScene()
             }
         }

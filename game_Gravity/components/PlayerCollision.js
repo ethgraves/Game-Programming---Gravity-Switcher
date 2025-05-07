@@ -9,7 +9,7 @@ class PlayerCollision extends Component{
     }
 
     update(){
-        //PlayerGlobals.set("isGrounded", false)
+        PlayerGlobals.set("isGrounded", false)
 
 
         let [pl, pr, pt, pb] = Collisions.getEdgesOfRectangle(this.parent)
@@ -19,8 +19,9 @@ class PlayerCollision extends Component{
             let [cl, cr, ct, cb] = Collisions.getEdgesOfRectangle(this.rigidBody.lastCollisionY)
 
             if (pb <= ct) {
-                console.log("T1")
-                if (PlayerGlobals.get("normalGravity") == false){
+                //console.log("T1")
+                if (PlayerGlobals.get("normalGravity")){
+                    PlayerGlobals.set("isGrounded", true)
                     this.transform.y -= 0.0001
                     this.rigidBody.vy = 0
                 }
@@ -34,7 +35,7 @@ class PlayerCollision extends Component{
             }
 
             else if (pt >= cb) {
-                console.log("T2")
+                //console.log("T2")
                 if (PlayerGlobals.get("normalGravity")){
                     this.transform.y += 0.0001
                     this.rigidBody.vy = 0
@@ -48,15 +49,15 @@ class PlayerCollision extends Component{
                 }
             }
 
-            else if (pb > ct) {
-                console.log("T3")
-                this.rigidBody.vy = 10
-            }
+            // else if (pb > ct) {
+            //     console.log("T3")
+            //     this.rigidBody.vy = 10
+            // }
 
-            else if (pt < cb) {
-                console.log("T4")
-                this.rigidBody.vy = -10
-            }
+            // else if (pt < cb) {
+            //     console.log("T4")
+            //     this.rigidBody.vy = -10
+            // }
 
             else{
                 PlayerGlobals.set("isGrounded", false)
