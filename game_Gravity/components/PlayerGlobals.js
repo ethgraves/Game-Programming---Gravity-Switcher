@@ -7,6 +7,16 @@ class PlayerGlobals extends Component {
         this.allPlayerGlobals = [this.normalGravity, this.isGrounded, this.rigidBody]
     }
 
+    update(){
+        if (this.rigidBody.gravity < 0){
+            this.normalGravity = false
+        }
+
+        else{
+            this.normalGravity = true
+        }
+    }
+
     static get(varName){
         if (varName == "normalGravity")
             return this.normalGravity
@@ -27,5 +37,8 @@ class PlayerGlobals extends Component {
 
         else if (varName == "rigidBody")
             this.rigidBody = value
+
+        
+        console.log("normalGravity = " + this.normalGravity + ", isGrounded = " + this.isGrounded)
     }
 }

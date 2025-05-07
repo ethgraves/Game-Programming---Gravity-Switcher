@@ -9,8 +9,8 @@ class PlayerMovement extends Component{
     }
 
     update(){
-        console.log("Norm Gravity = ", PlayerGlobals.normalGravity)
-        PlayerGlobals.set("isGrounded", false)
+        //console.log("Norm Gravity = ", PlayerGlobals.normalGravity)
+        //PlayerGlobals.set("isGrounded", false)
 
         this.rigidBody.vx = 0
 

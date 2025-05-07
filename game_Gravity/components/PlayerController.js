@@ -60,19 +60,19 @@ class PlayerController extends Component {
                 if (this.normalGravity) {
                     this.isGrounded = false
                     this.rigidBody.vy = -200
-                    console.log('Check1')
+                    //console.log('Check1')
                 }
                 else{
                     this.isGrounded = false
                     this.rigidBody.vy = +200
-                    console.log('Check1')
+                    //console.log('Check1')
                 }
             }
         }
 
         else {
             if (Input.keysDownThisFrame.includes("ArrowUp")) {
-                console.log('Check2')
+                //console.log('Check2')
                 this.rigidBody.gravity = -this.rigidBody.gravity
                 if (this.normalGravity && (this.rigidBody.vy >= 150)) {
                     this.rigidBody.vy = 150
