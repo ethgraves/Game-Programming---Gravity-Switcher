@@ -1,11 +1,12 @@
 class GameObject{
   components
-  constructor(name){
+  constructor(name, layer = 0){
     this.name = name
     this.components = []
     this.addComponent(new Transform())
     this.markForDelete = false
     this.started = false
+    this.layer = layer
   }
   get transform(){
     return this.components[0]

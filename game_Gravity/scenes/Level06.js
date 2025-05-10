@@ -1,9 +1,9 @@
-class Level05 extends Scene {
+class Level06 extends Scene {
     start() {
 // ===============================================================================================================
 // --- PLAYER ---
 // ==============
-        let playerX = 200
+        let playerX = 500
         let playerY = 490
         let playerWidth = 15
         let playerHeight = 15
@@ -16,24 +16,22 @@ class Level05 extends Scene {
 // ================================
 // --- PLATFORMS ([x, y, w, h]) ---
         // Adjust Vertical Top                  From top-left to bottom-right:
-        let AVT_p_1 = [250, 500, 200, 450]      // (BT-1)
-        let AVT_p_2 = [780, 305, 20, 225]       // (B-5)
-        let AVT_p_3 = [950, 150, 20, 200]               // (T-6)
+        let AVT_p_1 = [820, 100, 20, 300]
+        let AVT_p_2 = [670, 200, 50, 130]
 
         // Adjust Vertical Bottom
-        let AVB_p_1 = [540, 520, 20, 225]       // (B-3)
-        let AVB_p_2 = [1320, 520, 20, 160]      // (B-7)
-        let AVB_p_3 = [160, 500, 20, 135]               // (T-2)
-        let AVB_p_4 = [350, 375, 20, 235]               // (T-4)
+        let AVB_p_1 = [460, 500, 20, 400]
+        let AVB_p_2 = [640, 500, 20, 300]
+        let AVB_p_3 = [1000, 510, 20, 300]
 
         // Adjust Horizontal Left
-        let AHL_p_1 = [350, 520, 200, 20]       // (B-2)
-        let AHL_p_2 = [540, 305, 250, 20]       // (B-4)
-        let AHL_p_3 = [790, 520, 540, 20]       // (B-6)
-        let AHL_p_4 = [150, 365, 200, 20]               // (T-3)
-        let AHL_p_5 = [350, 150, 610, 20]               // (T-5)
-        let AHL_p_6 = [950, 340, 150, 20]               // (T-7)
-        let AHL_p_7 = [1300, 350, 30, 20]               // (T-8)
+        let AHL_p_1 = [450, 0, 380, 180]
+        let AHL_p_2 = [450, 725, 560, 450]
+        let AHL_p_3 = [450, 100, 380, 20]
+        let AHL_p_4 = [630, 510, 380, 20]
+        let AHL_p_5 = [640, 210, 100, 20]
+        let AHL_p_6 = [680, 375, 140, 10]
+        let AHL_p_7 = [640, 475, 120, 80]
 
         // Adjust Horizontal Right
 
@@ -41,28 +39,27 @@ class Level05 extends Scene {
 // -------------------------------------------------------------
 // --- SINGLE SPIKES ([x, y, w, h]) ---
         // Adjust Vertical Top                  From top-left to bottom-right:
-        let AVT_s_1 = [795, 295, 10, 215]       // (B-4)
-        let AVT_s_2 = [935, 160, 10, 200]               // (T-4)
+        let AVT_s_1 = [640, 110, 15, 10]
+        let AVT_s_2 = [690, 110, 15, 60]
+        let AVT_s_3 = [770, 110, 160, 10]
+        let AVT_s_4 = [820, 400, 15, 60]
 
 
         // Adjust Vertical Bottom
-        let AVB_s_1 = [525, 505, 10, 220]       // (B-2)
-        let AVB_s_2 = [1305, 505, 10, 145]      // (B-6)
-        let AVB_s_3 = [365, 380, 10, 220]               // (T-2)
+        let AVB_s_1 = [640, 200, 15, 10]
+        let AVB_s_2 = [730, 200, 15, 30]
+        let AVB_s_3 = [1, 1, 1, 1]
 
 
         
         // Adjust Horizontal Left
-        let AHL_s_1 = [350, 505, 180, 10]       // (B-1)
-        let AHL_s_2 = [525, 290, 275, 10]       // (B-3)
-        let AHL_s_3 = [795, 505, 515, 10]       // (B-5)
-        let AHL_s_4 = [170, 380, 200, 10]               // (T-1)
-        let AHL_s_5 = [360, 165, 579, 10]               // (T-3)
-        let AHL_s_6 = [935, 355, 165, 10]               // (T-5)
+        let AHL_s_1 = [740, 210, 20, 15]
+        let AHL_s_2 = [790, 210, 20, 15]
+        let AHL_s_3 = [670, 390, 140, 20]
+        let AHL_s_4 = [640, 465, 130, 80]
+        let AHL_s_5 = [640, 495, 187, 10]
+        let AHL_s_6 = [1, 1, 1, 1]
 
-
-
-        // Adjust Horizontal Right
 
 
 
@@ -74,11 +71,11 @@ class Level05 extends Scene {
 
 // -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---
-        let adjustVerticalTopPlatforms = [AVT_p_1, AVT_p_2, AVT_p_3]
-        let adjustVerticalBottomPlatforms = [AVB_p_1, AVB_p_2, AVB_p_3, AVB_p_4]
+        let adjustVerticalTopPlatforms = [AVT_p_1, AVT_p_2]
+        let adjustVerticalBottomPlatforms = [AVB_p_1, AVB_p_2, AVB_p_3]
         let adjustHorizontalLeftPlatforms = [AHL_p_1, AHL_p_2, AHL_p_3, AHL_p_4, AHL_p_5, AHL_p_6, AHL_p_7]
 
-        let adjustVerticalTopSpikes = [AVT_s_1, AVT_s_2]
+        let adjustVerticalTopSpikes = [AVT_s_1, AVT_s_2, AVT_s_3, AVT_s_4]
         let adjustVerticalBottomSpikes = [AVB_s_1, AVB_s_2, AVB_s_3]
         let adjustHorizontalLeftSpikes = [AHL_s_1, AHL_s_2, AHL_s_3, AHL_s_4, AHL_s_5, AHL_s_6]
 
@@ -90,12 +87,18 @@ class Level05 extends Scene {
         adjustVerticalBottomSpikes = PlatformAdjust.adjustVerticalBottom(adjustVerticalBottomSpikes)
         adjustHorizontalLeftSpikes = PlatformAdjust.adjustHorizontalLeft(adjustHorizontalLeftSpikes)
 
-
+// -------------------------------------------------------------
+// --- SAWS ([x, y, r]) ---
+        let saw_1 = [520, 400, 40]
+        let saw_2 = [580, 280, 40]
+        let saw_3 = [520, 170, 40]
+        let saw_4 = [770, 290, 30]
 
 // -------------------------------------------------------------
 // --- ALL OBJECTS ---
         let all_platforms = [adjustVerticalTopPlatforms, adjustHorizontalLeftPlatforms, adjustVerticalBottomPlatforms]
         let allSpikes = []
+        let allSaws = [saw_1, saw_2, saw_3, saw_4]
         let allAdjustedSpikes = [adjustVerticalTopSpikes, adjustVerticalBottomSpikes, adjustHorizontalLeftSpikes]
         let allSpikeSpawners = []
 
@@ -104,7 +107,7 @@ class Level05 extends Scene {
 // --- FINISH PLATFORM ---
 // =======================
         // Finish Platform
-        let finish_floor = [1200, 150, 180, 400]
+        let finish_floor = [910, 50, 180, 400]
         let finish_wall_left = [(finish_floor[0] - (finish_floor[2] / 2) - 5), (finish_floor[1] + 10), 10, 400]
         let finish_wall_right = [(finish_floor[0] + (finish_floor[2] / 2) + 5), (finish_floor[1] + 10), 10, 400]
 
@@ -116,8 +119,8 @@ class Level05 extends Scene {
 // --- FOR LEVEL ---
 // ====================
 // --- PLAYER GAME OBJECT ---
-        this.addGameObject(new GameObject().addComponent(new UIText("black", "30px Times New Roman", "Level: 5")), 10, 30)
-        this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity), playerX, playerY, playerWidth, playerHeight)
+        this.addGameObject(new GameObject().addComponent(new UIText("black", "30px Times New Roman", "Level: 6")), 10, 30)
+        this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity, 1), playerX, playerY, playerWidth, playerHeight)
 
 // -------------------------------------------------------------
 // --- SPIKE GAME OBJECTS ---
@@ -139,6 +142,13 @@ class Level05 extends Scene {
                         this.addGameObject(new Spawner("Spawner", allSpikeSpawners[i][4], allSpikeSpawners[i][5]), allSpikeSpawners[i][0], allSpikeSpawners[i][1], allSpikeSpawners[i][2], allSpikeSpawners[i][3])
         } catch(error){console.log("Error in SPIKE SPAWNER GAME OBJECTS")}
 
+ // -------------------------------------------------------------
+// --- SPIKE SPAWNER GAME OBJECTS ---
+        try{
+                for (let i = 0; i < allSaws.length; i++)
+                        this.addGameObject(new SawGameObject("Saw Game Object"), allSaws[i][0], allSaws[i][1], allSaws[i][2], allSaws[i][3])
+        } catch(error){console.log("Error in SPIKE SPAWNER GAME OBJECTS")}
+
 // -------------------------------------------------------------
 // --- PLATFORM GAME OBJECTS ---
         
@@ -154,8 +164,9 @@ class Level05 extends Scene {
         this.addGameObject(new PlatformGameObject("Platform Game Object"), finish_wall_right[0], finish_wall_right[1], finish_wall_right[2], finish_wall_right[3])
         this.addGameObject(new FinishGameObject("Finish Game Object"), finish_line[0], finish_line[1], finish_line[2], finish_line[3])
 
+
 // -------------------------------------------------------------
 // --- CONTROLLERS ---
-        this.addGameObject(new GameObject().addComponent(new SceneController(Level05, Level06))) // Current Scene, Next Scene
+        this.addGameObject(new GameObject().addComponent(new SceneController(Level06, Level06))) // Current Scene, Next Scene
     }
 }

@@ -71,7 +71,7 @@ class Level04 extends Scene {
 // --- FOR LEVEL ---
 // ====================
 // --- PLAYER GAME OBJECT ---
-        this.addGameObject(new GameObject().addComponent(new Text("blue", "Times New Roman")))
+        this.addGameObject(new GameObject().addComponent(new UIText("black", "30px Times New Roman", "Level: 4")), 10, 30)
         this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity), playerX, playerY, playerWidth, playerHeight)
 
 // -------------------------------------------------------------

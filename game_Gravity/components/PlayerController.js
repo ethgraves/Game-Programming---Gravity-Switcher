@@ -56,7 +56,7 @@ class PlayerController extends Component {
 
 
         if (this.isGrounded) {
-            if (Input.keysDownThisFrame.includes("ArrowUp")) {
+            if (Input.keysDownThisFrame.includes("ArrowUp") || Input.keysDownThisFrame.includes("KeyW") || Input.keysDownThisFrame.includes("Space")) {
                 if (this.normalGravity) {
                     this.isGrounded = false
                     this.rigidBody.vy = -200
@@ -71,7 +71,7 @@ class PlayerController extends Component {
         }
 
         else {
-            if (Input.keysDownThisFrame.includes("ArrowUp")) {
+            if (Input.keysDownThisFrame.includes("ArrowUp") || Input.keysDownThisFrame.includes("KeyW") || Input.keysDownThisFrame.includes("Space")) {
                 //console.log('Check2')
                 this.rigidBody.gravity = -this.rigidBody.gravity
                 if (this.normalGravity && (this.rigidBody.vy >= 150)) {

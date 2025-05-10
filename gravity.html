@@ -59,6 +59,7 @@
 
     <!-- Text -->
   <script src="./engine/components/Text.js"></script>
+  <script src="./engine/components/UIText.js"></script>
 
     <!-- Physics -->
   <script src="./engine/components/PhysicsStatic.js"></script>
@@ -98,6 +99,7 @@
   <script src="./game_Gravity/scenes/Level03.js"></script>
   <script src="./game_Gravity/scenes/Level04.js"></script>
   <script src="./game_Gravity/scenes/Level05.js"></script>
+  <script src="./game_Gravity/scenes/Level06.js"></script>
 
 <!------------------------------------------------->  
 
@@ -114,8 +116,9 @@
     let ctx   // A reference to the 2d drawing context in the canvas drawing element
 
     Globals.gridLinesTest = true
+    Globals.noclip = false
 
-    Engine.nextScene = new Playground() //Assign the start scene (game-specific code)
+    Engine.nextScene = new Level06() //Assign the start scene (game-specific code)
     Engine.start() //Setup the state of the game (game code)
 
 

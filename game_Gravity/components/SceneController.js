@@ -6,10 +6,12 @@ class SceneController extends Component {
     }
 
     update(){
+        console.log(Globals.noclip)
 
         let playerGameObject = Engine.currentScene.findGameObject("Player Game Object")
         let finishGameObject = Engine.currentScene.findGameObject("Finish Game Object")
         let spikeGameObjects = Engine.currentScene.findGameObjects("Spike Game Object")
+        let sawGameObjects = Engine.currentScene.findGameObjects("Saw Game Object")
         
 
         // Checks if player falls too far (restarts level)
@@ -25,15 +27,28 @@ class SceneController extends Component {
             Engine.nextScene = new this.nextScene()
         }
 
-        // if (Collisions.inCollision(playerGameObject, spikeGameObject)){
-        //     Engine.nextScene = new this.currentScene()
-        // }
+// ===============================================================================================================
+// --- CHEAT CODES ---
+// =======================
 
-        for (let spikeGameObject of spikeGameObjects){
-            if (Collisions.inCollision(playerGameObject, spikeGameObject)){
-                //console.log("bbbbbb")
-                PlayerGlobals.set("isGrounded", true)
-                Engine.nextScene = new this.currentScene()
+    if (Input.keysDownThisFrame.includes("KeyQ")){
+        if (Globals.noclip == false) Globals.noclip = true
+        else Globals.noclip = false
+    }
+
+        if (!Globals.noclip){
+            for (let spikeGameObject of spikeGameObjects){
+                if (Collisions.inCollision(playerGameObject, spikeGameObject)){
+                    PlayerGlobals.set("isGrounded", true)
+                    Engine.nextScene = new this.currentScene()
+                }
+            }
+
+            for (let sawGameObject of sawGameObjects){
+                if (Collisions.inCollision(playerGameObject, sawGameObject)){
+                    PlayerGlobals.set("isGrounded", true)
+                    Engine.nextScene = new this.currentScene()
+                }
             }
         }
     } 

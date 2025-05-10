@@ -50,6 +50,7 @@ class Playground extends Scene {
         this.addGameObject(new PlatformGameObject("Platform Game Object"), wall_2X, wall_2Y, wall_2Width, wall_2Height)
         this.addGameObject(new PlatformGameObject("Platform Game Object"), wall_3X, wall_3Y, wall_3Width, wall_3Height)
         this.addGameObject(new SawGameObject("Saw Game Object"), 100, 100, 30, 30)
+        this.addGameObject(new SawGameObject("Saw Game Object"), 100, 400, 30, 30)
         this.addGameObject(new SpikeGameObject("Spike Game Object"), 150, 150, 30, 30)
         this.addGameObject(new SpikeGameObject("Spike Game Object"), 300, 150, 30, 30)
         this.addGameObject(new Spawner("Spawner", false, 2), 250, 200, 10, 20)

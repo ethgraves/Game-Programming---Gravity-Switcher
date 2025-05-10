@@ -57,7 +57,7 @@ class Level01 extends Scene {
 // --- FOR LEVEL ---
 // ====================
 // --- GAME OBJECTS ---
-        this.addGameObject(new GameObject().addComponent(new Text("blue", "Times New Roman")))
+        this.addGameObject(new GameObject().addComponent(new UIText("black", "30px Times New Roman", "Level: 1")), 10, 30)
         this.addGameObject(new PlayerGameObject("Player Game Object", playerSpeed, playerGravity), playerX, playerY, playerWidth, playerHeight)
         this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[0][0], all_platforms[0][1], all_platforms[0][2], all_platforms[0][3])
 

@@ -14,10 +14,10 @@ class PlayerMovement extends Component{
 
         this.rigidBody.vx = 0
 
-        if (Input.keysdown.includes("ArrowLeft"))
+        if (Input.keysdown.includes("ArrowLeft") || Input.keysdown.includes("KeyA"))
             this.rigidBody.vx = -this.speed
 
-        if (Input.keysdown.includes("ArrowRight"))
+        if (Input.keysdown.includes("ArrowRight") || Input.keysdown.includes("KeyD"))
             this.rigidBody.vx = this.speed
     }
 }

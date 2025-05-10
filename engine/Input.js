@@ -28,6 +28,7 @@ class Input{
         Input.keysdown.push(event.code)
       if(!Input.keysDownThisFrame.includes(event.code))
         Input.keysDownThisFrame.push(event.code)
+      console.log(Input.keysdown)
     }
 
     static keyup(event) {

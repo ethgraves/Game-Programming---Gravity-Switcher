@@ -10,7 +10,7 @@ class PlayerJumping extends Component{
 
     update(){
         if (PlayerGlobals.get("isGrounded")) {
-            if (Input.keysDownThisFrame.includes("ArrowUp")) {
+            if (Input.keysDownThisFrame.includes("ArrowUp") || Input.keysDownThisFrame.includes("KeyW") || Input.keysDownThisFrame.includes("Space")) {
                 if (PlayerGlobals.get("normalGravity")) {
                     PlayerGlobals.set("isGrounded", false)
                     this.rigidBody.vy = -200
@@ -25,7 +25,7 @@ class PlayerJumping extends Component{
         }
 
         else if (PlayerGlobals.get("isGrounded") == false){
-            if (Input.keysDownThisFrame.includes("ArrowUp")) {
+            if (Input.keysDownThisFrame.includes("ArrowUp") || Input.keysDownThisFrame.includes("KeyW") || Input.keysDownThisFrame.includes("Space")) {
                 //console.log('Check2')
                 if (PlayerGlobals.get("normalGravity") && (this.rigidBody.vy >= 150)) {
                     this.rigidBody.vy = 150

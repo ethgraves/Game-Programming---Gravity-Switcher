@@ -21,7 +21,13 @@ class Scene {
     // for (let gameObject of this.gameObjects) {
     //   gameObject.draw()
     // }
-    this.gameObjects.forEach(g=>g.draw())
+    ctx.save()
+    {
+      let sortedByLayers = this.gameObjects.toSorted((a, b) => a.layer - b.layer)
+      sortedByLayers.forEach(g=>g.draw())
+    }
+    ctx.restore()
+    this.gameObjects.toSorted((a, b) => a.layer - b.layer)
   }
 
   update() {
