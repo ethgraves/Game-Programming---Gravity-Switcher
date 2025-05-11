@@ -1,30 +1,42 @@
-class Transform extends Component{
+class Transform extends Component {
+    x   // x coordinate
+    y   // y coordinate
+    r   // Radius for a circle (or width [w] for a rectangle) (or x2)
+    h   // Height for a rectangle 
 
-    x // The x coordinate of the game object with this transform. For circles and rectangles, this is the center x coordinate. For lines, this is x coordinate 1.
-    y // The y coordinate of the game object with this transform. For circles and rectangles, this is the center x coordinate. For lines, this is y coordinate 1.
-    r // The radius of the circle, or the width of the rectangle, with this transform. For lines, this is the x coordinate 2. See also w and x2.
-    h // The height of the rectangle with this transform. Ignored for circles and lines. For lines, this is the y coordinate 2. See also y2.
 
-    get w(){
+// ==========================================================================
+// --- WIDTH / RADIUS ---
+// ======================
+    get w() {            // Gets the width (r)
         return this.r
     }
-    set w(value){
+
+    set w(value) {       // Sets the width (r)
         this.r = value
     }
 
-    get x2(){
+
+// ==========================================================================
+// --- X2 ---
+// ==========
+    get x2() {           // Gets x2 (r)
         return this.r
     }
 
-    get y2(){
+    set x2(value) {      // Sets x2 (r)
+        this.r = value
+    }
+
+    
+// ==========================================================================
+// --- Y2 / HEIGHT ---
+// ===================
+    get y2() {           // Gets y2 (h)
         return this.h
     }
 
-    set x2(value){
-        this.r = value
-    }
-
-    set y2(value){
+    set y2(value) {      // Sets y2 (h)
         this.h = value
     }
 }

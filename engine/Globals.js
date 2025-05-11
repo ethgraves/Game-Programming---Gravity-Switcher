@@ -1,3 +1,3 @@
-class Globals{
-  
+class Globals {
+
 }

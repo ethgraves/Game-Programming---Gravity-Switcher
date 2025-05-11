@@ -1,19 +1,23 @@
-class Component{
+class Component {
     parent
     started
-    constructor(){
+    constructor() {
         this.started = false;
     }
-    get transform(){
+
+    get transform() {
         return this.parent.transform
     }
-    start(){
+
+    start() {
 
     }
-    update(){
+
+    update() {
 
     }
-    draw(){
+    
+    draw() {
 
     }
 }

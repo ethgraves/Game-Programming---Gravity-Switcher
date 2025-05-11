@@ -1,6 +1,7 @@
-class GameObject{
+class GameObject {
   components
-  constructor(name, layer = 0){
+  
+  constructor(name, layer = 0) {
     this.name = name
     this.components = []
     this.addComponent(new Transform())
@@ -8,50 +9,74 @@ class GameObject{
     this.started = false
     this.layer = layer
   }
-  get transform(){
+
+  // Gets transform for a specific Game Object
+  get transform() {
     return this.components[0]
   }
-  addComponent(component){
+
+  // Adds a component to a Game Object
+  addComponent(component) {
     this.components.push(component)
     component.parent = this
+    
     return this
   }
-  start(){
-    for(let component of this.components){
+
+  // Starts the component
+  start() {
+    for (let component of this.components) {
       component.start()
     }
   }
-  update(){
-    for(let component of this.components){
-      if(!component.started){
-        component.started = true;
+
+  // Updates the components
+  update() {
+    // Loop through all of the components
+    for (let component of this.components) {
+
+      // Start the component if it is not already started
+      if (!component.started) {
+        component.started = true
         component.start()
       }
     }
-    for(let component of this.components){
+
+    // Loop through all components and update them
+    for (let component of this.components) {
       component.update()
     }
   }
-  draw(){
-    for(let component of this.components){
+
+  // Draws for each component
+  draw() {
+    for (let component of this.components) {
       component.draw()
     }
   }
-  destroy(){
+
+  
+  destroy() {
     this.markForDelete = true
   }
-  findComponent(classType){
-    for(let component of this.components){
-      if(component instanceof classType)
+
+  // Finds a component given a classType
+  findComponent(classType) {
+    for (let component of this.components) {
+      if (component instanceof classType)
         return component
     }
   }
-  findComponents(classType){
+
+  // Finds all components given a classType
+  findComponents(classType) {
     let toReturn = []
-    for(let component of this.components){
-      if(component instanceof classType)
+    
+    for (let component of this.components) {
+      if (component instanceof classType)
         toReturn.push(component)
     }
+    
     return toReturn
   }
 }

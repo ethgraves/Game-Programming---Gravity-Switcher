@@ -1,5 +1,5 @@
 class PlayerGameObject extends GameObject {
-    constructor(name, speed, gravity, layer){
+    constructor(name, speed, gravity, layer) {
         super(name)
         this.speed = speed
         this.gravity = gravity

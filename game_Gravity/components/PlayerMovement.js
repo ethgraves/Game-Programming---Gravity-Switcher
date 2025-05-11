@@ -1,17 +1,14 @@
-class PlayerMovement extends Component{
-    constructor(speed){
+class PlayerMovement extends Component {
+    constructor(speed) {
         super()
         this.speed = speed
     }
 
-    start(){
+    start() {
         this.rigidBody = this.parent.findComponent(PlayerGlobals).rigidBody
     }
 
-    update(){
-        //console.log("Norm Gravity = ", PlayerGlobals.normalGravity)
-        //PlayerGlobals.set("isGrounded", false)
-
+    update() {
         this.rigidBody.vx = 0
 
         if (Input.keysdown.includes("ArrowLeft") || Input.keysdown.includes("KeyA"))

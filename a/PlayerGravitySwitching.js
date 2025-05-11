@@ -7,8 +7,4 @@ class PlayerGravitySwitching extends Component{
     start(){
         this.rigidBody = this.parent.findComponent(PlayerGlobals).rigidBody
     }
-
-    update(){
-        
-}
 }

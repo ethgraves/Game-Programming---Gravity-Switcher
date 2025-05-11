@@ -106,20 +106,13 @@ class Level05 extends Scene {
         try{
                 for (let i = 0; i < allSpikes.length; i++)
                         this.addGameObject(new SpikeGameObject("Spike Game Object"), allSpikes[i][0], allSpikes[i][1], allSpikes[i][2], allSpikes[i][3])
-        } catch(error){console.log("Error in SPIKE GAME OBJECTS 1")}
+        } catch(error){}
 
         try{
                 for (let i = 0; i < allAdjustedSpikes.length; i++)
                         for (let j = 0; j < allAdjustedSpikes[i].length; j++)
                                 this.addGameObject(new SpikeGameObject("Spike Game Object"), allAdjustedSpikes[i][j][0], allAdjustedSpikes[i][j][1], allAdjustedSpikes[i][j][2], allAdjustedSpikes[i][j][3])
-        } catch(error){console.log("Error in SPIKE GAME OBJECTS 2")}
-
-// -------------------------------------------------------------
-// --- SPIKE SPAWNER GAME OBJECTS ---
-        try{
-                for (let i = 0; i < allSpikeSpawners.length; i++)
-                        this.addGameObject(new Spawner("Spawner", allSpikeSpawners[i][4], allSpikeSpawners[i][5]), allSpikeSpawners[i][0], allSpikeSpawners[i][1], allSpikeSpawners[i][2], allSpikeSpawners[i][3])
-        } catch(error){console.log("Error in SPIKE SPAWNER GAME OBJECTS")}
+        } catch(error){}
 
 // -------------------------------------------------------------
 // --- PLATFORM GAME OBJECTS ---

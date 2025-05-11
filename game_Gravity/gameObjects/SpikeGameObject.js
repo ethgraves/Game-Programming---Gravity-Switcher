@@ -1,5 +1,5 @@
 class SpikeGameObject extends GameObject {
-    start(){
+    start() {
         this.addComponent(new Rectangle("red", "red", 1))
     }
 }
