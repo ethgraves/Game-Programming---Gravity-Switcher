@@ -20,16 +20,6 @@ class Level01 extends Scene {
         let floor_1 = [375, 300, 200, 450] // Starting Platform
 
 // -------------------------------------------------------------
-// --- CEILINGS ---
-        // Ceiling Aspects (left-right, top-bottom)
-        let pass2
-
-// -------------------------------------------------------------
-// --- WALLS ---
-        // Wall Aspects (left-right, top-bottom)
-        let pass3
-
-// -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---
         let floorPlatforms = [floor_1]
 

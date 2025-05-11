@@ -15,6 +15,8 @@ class PlayerGlobals extends Component {
         else{
             this.normalGravity = true
         }
+
+        //console.log(this.rigidBody.vy)
     }
 
     static get(varName){
@@ -39,6 +41,6 @@ class PlayerGlobals extends Component {
             this.rigidBody = value
 
         
-        //console.log("normalGravity = " + this.normalGravity + ", isGrounded = " + this.isGrounded)
+        // console.log("normalGravity = " + this.normalGravity + ", isGrounded = " + this.isGrounded)
     }
 }

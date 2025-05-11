@@ -49,6 +49,22 @@ class PlayerCollision extends Component{
                 }
             }
 
+            else if (pb >= ct) {
+                //console.log("T2")
+                console.log('TESTTESTEST')
+                if (PlayerGlobals.get("normalGravity")){
+                    this.transform.y += 0.0001
+                    this.rigidBody.vy = 0
+                }
+
+                else{
+                    PlayerGlobals.set("isGrounded", true)
+                    PlayerGlobals.set("normalGravity", false)
+                    this.transform.y += 0.0001
+                    this.rigidBody.vy = 0
+                }
+            }
+
             // else if (pb > ct) {
             //     console.log("T3")
             //     this.rigidBody.vy = 10
@@ -61,6 +77,14 @@ class PlayerCollision extends Component{
 
             else{
                 PlayerGlobals.set("isGrounded", false)
+            }
+
+            if (this.rigidBody.vy <= -200){
+                PlayerGlobals.set("normalGravity", false)
+            }
+
+            if (this.rigidBody >= 200){
+                PlayerGlobals.set("normalGravity", true)
             }
         }
     }

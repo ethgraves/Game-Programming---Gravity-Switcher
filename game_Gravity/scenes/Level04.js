@@ -20,25 +20,15 @@ class Level04 extends Scene {
 
 // -------------------------------------------------------------
 // --- CEILINGS ([x, y, w, h]) ---
-        let ceiling_1 = [650, 800, 20, 600] // Left Middle Wall
+        let ceiling_1 = [650, 500, 20, 600] // Left Middle Wall
         // 500
 
 // -------------------------------------------------------------
 // --- SINGLE SPIKES ([x, y, w, h]) ---
         let spike_1 = [ceiling_1[0], ceiling_1[1] + 11, 10, 20] // Attached to bottom of ceiling_1
         let spike_2 = [floor_2[0], floor_2[1] - 11, 10, 20] // Attached to top of floor_2
-
-// -------------------------------------------------------------
-// --- SPIKE SPAWNERS ([x, y, w, h, horizontal, amount]) ---
-        let spikeSpawner_1 = [671, 165, 10, 20, false, 16]
-        let spikeSpawner_2 = [804, 200, 10, 20, false, 16]
-
-// -------------------------------------------------------------
-// --- PLATFORM ATTACHMENTS ---
-        // spike_1 = Attach.attach(spike_1, ceiling_1, "top")
-        // spike_2 = Attach.attach(spike_2, floor_2, "top")
-        // spikeSpawner_1 = Attach.attach(spikeSpawner_1, ceiling_1, "right")
-        // spikeSpawner_2 = Attach.attach(spikeSpawner_2, floor_2, "left")
+        let spike_3 = [670, 350, 20, 260]
+        let spike_4 = [805, 350, 20, 260]
 
 // -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---
@@ -51,9 +41,7 @@ class Level04 extends Scene {
 // -------------------------------------------------------------
 // --- ALL OBJECTS ---
         let all_platforms = [floorPlatforms, ceilingPlatforms]
-        let allSpikes = [spike_1, spike_2]
-        let allSpikeSpawners = [spikeSpawner_1, spikeSpawner_2]
-
+        let allSpikes = [spike_1, spike_2, spike_3, spike_4]
 
 // ===============================================================================================================
 // --- FINISH PLATFORM ---
@@ -81,18 +69,12 @@ class Level04 extends Scene {
         }
 
 // -------------------------------------------------------------
-// --- SPIKE SPAWNER GAME OBJECTS ---
-        for (let i = 0; i < allSpikeSpawners.length; i++){
-                this.addGameObject(new Spawner("Spawner", allSpikeSpawners[i][4], allSpikeSpawners[i][5]), allSpikeSpawners[i][0], allSpikeSpawners[i][1], allSpikeSpawners[i][2], allSpikeSpawners[i][3])
-}
-
-// -------------------------------------------------------------
 // --- PLATFORM GAME OBJECTS ---
-for (let i = 0; i < all_platforms.length; i++){
-        for (let j = 0; j < all_platforms[i].length; j++){
-                this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[i][j][0], all_platforms[i][j][1], all_platforms[i][j][2], all_platforms[i][j][3])
+        for (let i = 0; i < all_platforms.length; i++){
+                for (let j = 0; j < all_platforms[i].length; j++){
+                        this.addGameObject(new PlatformGameObject("Platform Game Object"), all_platforms[i][j][0], all_platforms[i][j][1], all_platforms[i][j][2], all_platforms[i][j][3])
+                }
         }
-}
 
 // -------------------------------------------------------------
 // --- FINISH STRUCTURE ---

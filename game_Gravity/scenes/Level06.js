@@ -16,7 +16,7 @@ class Level06 extends Scene {
 // ================================
 // --- PLATFORMS ([x, y, w, h]) ---
         // Adjust Vertical Top                  From top-left to bottom-right:
-        let AVT_p_1 = [820, 100, 20, 300]
+        let AVT_p_1 = [820, 100, 20, 280]
         let AVT_p_2 = [670, 200, 50, 130]
 
         // Adjust Vertical Bottom
@@ -30,7 +30,7 @@ class Level06 extends Scene {
         let AHL_p_3 = [450, 100, 380, 20]
         let AHL_p_4 = [630, 510, 380, 20]
         let AHL_p_5 = [640, 210, 100, 20]
-        let AHL_p_6 = [680, 375, 140, 10]
+        let AHL_p_6 = [680, 375, 240, 10]
         let AHL_p_7 = [640, 475, 120, 80]
 
         // Adjust Horizontal Right
@@ -42,32 +42,24 @@ class Level06 extends Scene {
         let AVT_s_1 = [640, 110, 15, 10]
         let AVT_s_2 = [690, 110, 15, 60]
         let AVT_s_3 = [770, 110, 160, 10]
-        let AVT_s_4 = [820, 400, 15, 60]
+        let AVT_s_4 = [820, 380, 15, 60]
 
 
         // Adjust Vertical Bottom
         let AVB_s_1 = [640, 200, 15, 10]
         let AVB_s_2 = [730, 200, 15, 30]
-        let AVB_s_3 = [1, 1, 1, 1]
+        let AVB_s_3 = [860, 495, 15, 90]
 
 
-        
         // Adjust Horizontal Left
         let AHL_s_1 = [740, 210, 20, 15]
         let AHL_s_2 = [790, 210, 20, 15]
-        let AHL_s_3 = [670, 390, 140, 20]
+        let AHL_s_3 = [670, 370, 140, 20]
         let AHL_s_4 = [640, 465, 130, 80]
-        let AHL_s_5 = [640, 495, 187, 10]
-        let AHL_s_6 = [1, 1, 1, 1]
-
-
-
-
-
-// -------------------------------------------------------------
-// --- SPIKE SPAWNERS ([x, y, w, h, horizontal, amount]) ---
-        let spikeSpawner_1 = [671, 165, 10, 20, false, 16]
-        let spikeSpawner_2 = [804, 200, 10, 20, false, 16]
+        let AHL_s_5 = [645, 495, 350, 10]
+        let AHL_s_6 = [900, 300, 90, 15]
+        let AHL_s_7 = [880, 280, 120, 5]
+        let AHL_s_8 = [830, 280, 30, 5]
 
 // -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---
@@ -77,7 +69,7 @@ class Level06 extends Scene {
 
         let adjustVerticalTopSpikes = [AVT_s_1, AVT_s_2, AVT_s_3, AVT_s_4]
         let adjustVerticalBottomSpikes = [AVB_s_1, AVB_s_2, AVB_s_3]
-        let adjustHorizontalLeftSpikes = [AHL_s_1, AHL_s_2, AHL_s_3, AHL_s_4, AHL_s_5, AHL_s_6]
+        let adjustHorizontalLeftSpikes = [AHL_s_1, AHL_s_2, AHL_s_3, AHL_s_4, AHL_s_5, AHL_s_6, AHL_s_7, AHL_s_8]
 
         adjustVerticalTopPlatforms = PlatformAdjust.adjustVerticalTop(adjustVerticalTopPlatforms)
         adjustVerticalBottomPlatforms = PlatformAdjust.adjustVerticalBottom(adjustVerticalBottomPlatforms)
@@ -93,14 +85,13 @@ class Level06 extends Scene {
         let saw_2 = [580, 280, 40]
         let saw_3 = [520, 170, 40]
         let saw_4 = [770, 290, 30]
+        let saw_5 = [930, 375, 30]
 
 // -------------------------------------------------------------
 // --- ALL OBJECTS ---
         let all_platforms = [adjustVerticalTopPlatforms, adjustHorizontalLeftPlatforms, adjustVerticalBottomPlatforms]
-        let allSpikes = []
-        let allSaws = [saw_1, saw_2, saw_3, saw_4]
+        let allSaws = [saw_1, saw_2, saw_3, saw_4, saw_5]
         let allAdjustedSpikes = [adjustVerticalTopSpikes, adjustVerticalBottomSpikes, adjustHorizontalLeftSpikes]
-        let allSpikeSpawners = []
 
 
 // ===============================================================================================================
@@ -136,14 +127,7 @@ class Level06 extends Scene {
         } catch(error){console.log("Error in SPIKE GAME OBJECTS 2")}
 
 // -------------------------------------------------------------
-// --- SPIKE SPAWNER GAME OBJECTS ---
-        try{
-                for (let i = 0; i < allSpikeSpawners.length; i++)
-                        this.addGameObject(new Spawner("Spawner", allSpikeSpawners[i][4], allSpikeSpawners[i][5]), allSpikeSpawners[i][0], allSpikeSpawners[i][1], allSpikeSpawners[i][2], allSpikeSpawners[i][3])
-        } catch(error){console.log("Error in SPIKE SPAWNER GAME OBJECTS")}
-
- // -------------------------------------------------------------
-// --- SPIKE SPAWNER GAME OBJECTS ---
+// --- SAW GAME OBJECTS ---
         try{
                 for (let i = 0; i < allSaws.length; i++)
                         this.addGameObject(new SawGameObject("Saw Game Object"), allSaws[i][0], allSaws[i][1], allSaws[i][2], allSaws[i][3])

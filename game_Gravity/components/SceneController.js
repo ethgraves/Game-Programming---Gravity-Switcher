@@ -6,7 +6,6 @@ class SceneController extends Component {
     }
 
     update(){
-        console.log(Globals.noclip)
 
         let playerGameObject = Engine.currentScene.findGameObject("Player Game Object")
         let finishGameObject = Engine.currentScene.findGameObject("Finish Game Object")

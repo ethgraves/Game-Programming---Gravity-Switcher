@@ -17,12 +17,7 @@ class Level02 extends Scene {
 // --- FLOORS ---
         // Floor Aspects (left-right, top-bottom)
         let floor_1 = [375, 300, 200, 450] // Starting Platform
-        let floor_2 = [737, 250, 20, 500] // Middle Wall
-
-// -------------------------------------------------------------
-// --- CEILINGS ---
-        // Ceiling Aspects (left-right, top-bottom)
-        let pass2
+        let floor_2 = [737, -30, 20, 500] // Middle Wall
 
 // -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---

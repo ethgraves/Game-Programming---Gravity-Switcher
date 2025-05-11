@@ -35,9 +35,6 @@ class Level05 extends Scene {
         let AHL_p_6 = [950, 340, 150, 20]               // (T-7)
         let AHL_p_7 = [1300, 350, 30, 20]               // (T-8)
 
-        // Adjust Horizontal Right
-
-
 // -------------------------------------------------------------
 // --- SINGLE SPIKES ([x, y, w, h]) ---
         // Adjust Vertical Top                  From top-left to bottom-right:
@@ -50,7 +47,6 @@ class Level05 extends Scene {
         let AVB_s_2 = [1305, 505, 10, 145]      // (B-6)
         let AVB_s_3 = [365, 380, 10, 220]               // (T-2)
 
-
         
         // Adjust Horizontal Left
         let AHL_s_1 = [350, 505, 180, 10]       // (B-1)
@@ -59,18 +55,6 @@ class Level05 extends Scene {
         let AHL_s_4 = [170, 380, 200, 10]               // (T-1)
         let AHL_s_5 = [360, 165, 579, 10]               // (T-3)
         let AHL_s_6 = [935, 355, 165, 10]               // (T-5)
-
-
-
-        // Adjust Horizontal Right
-
-
-
-
-// -------------------------------------------------------------
-// --- SPIKE SPAWNERS ([x, y, w, h, horizontal, amount]) ---
-        let spikeSpawner_1 = [671, 165, 10, 20, false, 16]
-        let spikeSpawner_2 = [804, 200, 10, 20, false, 16]
 
 // -------------------------------------------------------------
 // --- PLATFORM ADJUSTMENTS ---
@@ -95,9 +79,7 @@ class Level05 extends Scene {
 // -------------------------------------------------------------
 // --- ALL OBJECTS ---
         let all_platforms = [adjustVerticalTopPlatforms, adjustHorizontalLeftPlatforms, adjustVerticalBottomPlatforms]
-        let allSpikes = []
         let allAdjustedSpikes = [adjustVerticalTopSpikes, adjustVerticalBottomSpikes, adjustHorizontalLeftSpikes]
-        let allSpikeSpawners = []
 
 
 // ===============================================================================================================

@@ -9,11 +9,9 @@ class PlayerGameObject extends GameObject {
     start() {
         this.addComponent(new PlayerGlobals())
         this.addComponent(new Rectangle("blue", "transparent", 0))
-        // this.addComponent(new PlayerController(this.speed))
         this.addComponent(new PlayerMovement(this.speed))
         this.addComponent(new PlayerCollision(this.speed))
         this.addComponent(new PlayerJumping(this.speed))
-        this.addComponent(new PlayerGravitySwitching(this.speed))
         this.addComponent(new RigidBodyPlatformer(this.gravity)) // Gravity (+ = More Gravity | - = Less Gravity)
     }
 }
