@@ -20,7 +20,6 @@ class SceneController extends Component {
 // --- SCENE SWITCH DETERMINER ---
 // ===============================
         if (playerGameObject.transform.y > window.innerHeight + 30 || playerGameObject.transform.y < -30) {
-            console.log(Globals.deathCount)
             Engine.nextScene = new this.currentScene()
             Globals.noclip = false
             this.usedNoclip = false
@@ -44,11 +43,6 @@ class SceneController extends Component {
         }
 
         if (this.usedNoclip) Globals.usedNoclip = true
-
-
-
-        console.log(this.usedNoclip)
-
 
 // ===============================================================================================================
 // --- CHEAT CODES ---
