@@ -55,6 +55,11 @@ class GameObject {
     }
   }
 
+  drawUI() {
+    for (let component of this.components) {
+      component.drawUI()
+    }
+  }
   
   destroy() {
     this.markForDelete = true

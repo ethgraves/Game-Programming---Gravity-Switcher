@@ -1,7 +1,9 @@
 class Scene {
+  started
   constructor(backgroundColor = "white") {
     this.backgroundColor = backgroundColor
     this.started = false
+    this.addGameObject(new GameObject("Camera"))
   }
 
   gameObjects = []
@@ -13,12 +15,18 @@ class Scene {
   draw() {
     ctx.save()
     {
+      ctx.translate((canvas.width / 2), (canvas.height / 2))
+
+      ctx.scale(Camera.main.transform.w, Camera.main.transform.h)
+
+      ctx.translate(-Camera.main.transform.x, -Camera.main.transform.y)
+
       let sortedByLayers = this.gameObjects.toSorted((a, b) => a.layer - b.layer)
       sortedByLayers.forEach(g => g.draw())
     }
     ctx.restore()
 
-    this.gameObjects.toSorted((a, b) => a.layer - b.layer)
+    this.gameObjects.toSorted((a, b) => a.layer - b.layer).forEach(g => g.drawUI())
   }
 
   update() {

@@ -20,4 +20,8 @@ class Component {
     draw() {
 
     }
+
+    drawUI() {
+        
+    }
 }

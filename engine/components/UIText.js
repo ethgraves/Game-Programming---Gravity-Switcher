@@ -6,7 +6,7 @@ class UIText extends Component {
     this.text = text
   }
 
-  draw() {
+  drawUI() {
     ctx.fillStyle = this.fillStyle
     ctx.font = this.font
     

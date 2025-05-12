@@ -51,4 +51,8 @@ class Vector2 {
     return new Vector2(-this.x, -this.y)
   }
 
+  // Returns a perpendicular vector
+  perp(){
+    return new Vector2(this.y, -this.x)
+  }
 }

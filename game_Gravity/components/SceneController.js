@@ -45,5 +45,10 @@ class SceneController extends Component {
                 }
             }
         }
+
+        Camera.main.transform.x = window.innerWidth / 2
+        Camera.main.transform.y = window.innerHeight / 2
+        Camera.main.transform.w = 1
+        Camera.main.transform.h = 1
     }
 }

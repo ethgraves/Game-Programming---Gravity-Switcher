@@ -39,4 +39,26 @@ class Transform extends Component {
     set y2(value) {      // Sets y2 (h)
         this.h = value
     }
+
+// ==========================================================================
+// --- POSITIONAL ---
+// ==================
+    setPosition(vector) {
+        this.x = vector.x
+        this.y = vector.y
+    }
+
+    move(vector) {
+        this.x += vector.x
+        this.y += vector.y
+    }
+
+    get position()  {
+        return new Vector2(this.x, this.y)
+    }
+
+    set position(vector) {
+        this.x = vector.x
+        this.y = vector.y
+    }
 }
