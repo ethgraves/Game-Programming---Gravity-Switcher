@@ -151,6 +151,6 @@ class Level06 extends Scene {
 
 // -------------------------------------------------------------
 // --- CONTROLLERS ---
-        this.addGameObject(new GameObject().addComponent(new SceneController(Level06, Level06))) // Current Scene, Next Scene
+        this.addGameObject(new GameObject().addComponent(new SceneController(Level06, WinScene))) // Current Scene, Next Scene
     }
 }

@@ -3,27 +3,56 @@ class SceneController extends Component {
         super()
         this.currentScene = currentScene
         this.nextScene = nextScene
+        this.usedNoclip = false
     }
 
     update() {
-
+// ===============================================================================================================
+// --- FIND GAME OBJECTS ---
+// =========================
         let playerGameObject = Engine.currentScene.findGameObject("Player Game Object")
         let finishGameObject = Engine.currentScene.findGameObject("Finish Game Object")
         let spikeGameObjects = Engine.currentScene.findGameObjects("Spike Game Object")
         let sawGameObjects = Engine.currentScene.findGameObjects("Saw Game Object")
 
 
+// ===============================================================================================================
+// --- SCENE SWITCH DETERMINER ---
+// ===============================
         if (playerGameObject.transform.y > window.innerHeight + 30 || playerGameObject.transform.y < -30) {
+            console.log(Globals.deathCount)
             Engine.nextScene = new this.currentScene()
-        }
+            Globals.noclip = false
+            this.usedNoclip = false
+            Globals.usedNoclip = false
+            }
 
-        if (Collisions.inCollision(playerGameObject, finishGameObject)) {
+
+        if (Collisions.inCollision(playerGameObject, finishGameObject) && this.usedNoclip == false) {
             Engine.nextScene = new this.nextScene()
         }
 
+        if (Globals.noclip) {
+            this.usedNoclip = true
+        }
+
+        if (Collisions.inCollision(playerGameObject, finishGameObject) && this.usedNoclip){
+            Engine.nextScene = new this.currentScene()
+            Globals.noclip = false
+            this.usedNoclip = false
+            Globals.usedNoclip = false
+        }
+
+        if (this.usedNoclip) Globals.usedNoclip = true
+
+
+
+        console.log(this.usedNoclip)
+
+
 // ===============================================================================================================
 // --- CHEAT CODES ---
-// =======================
+// ===================
 
         if (Input.keysDownThisFrame.includes("KeyQ")) {
             if (Globals.noclip == false) Globals.noclip = true
@@ -46,6 +75,10 @@ class SceneController extends Component {
             }
         }
 
+
+// ===============================================================================================================
+// --- CAMERA ---
+// ==============
         Camera.main.transform.x = window.innerWidth / 2
         Camera.main.transform.y = window.innerHeight / 2
         Camera.main.transform.w = 1

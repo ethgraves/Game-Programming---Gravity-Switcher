@@ -69,6 +69,7 @@
   <script src="./game_Gravity/components/PlayerGlobals.js"></script>
   <script src="./game_Gravity/components/PlayerCollision.js"></script>
   <script src="./game_Gravity/components/PlayerJumping.js"></script>
+  <!-- <script src="./game_Gravity/components/TextUpdater.js"></script> -->
    
 <!------------------------------------------------->
 
@@ -78,6 +79,8 @@
   <script src="./game_Gravity/gameObjects/PlatformGameObject.js"></script>
   <script src="./game_Gravity/gameObjects/SpikeGameObject.js"></script>
   <script src="./game_Gravity/gameObjects/SawGameObject.js"></script>
+  <!-- <script src="./game_Gravity/gameObjects/UITextGameObject.js"></script>
+  <script src="./game_Gravity/gameObjects/TextGameObject.js"></script> -->
   
 <!------------------------------------------------->  
 
@@ -89,6 +92,7 @@
   <script src="./game_Gravity/scenes/Level04.js"></script>
   <script src="./game_Gravity/scenes/Level05.js"></script>
   <script src="./game_Gravity/scenes/Level06.js"></script>
+  <script src="./game_Gravity/scenes/WinScene.js"></script>
 
 <!------------------------------------------------->  
 
@@ -106,8 +110,9 @@
 
     Globals.gridLinesTest = true
     Globals.noclip = false
+    Globals.usedNoclip = false
 
-    Engine.nextScene = new Level01() //Assign the start scene (game-specific code)
+    Engine.nextScene = new Level06() //Assign the start scene (game-specific code)
     Engine.start() //Setup the state of the game (game code)
 
 
